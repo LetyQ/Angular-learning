@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>filter tests</title>
+  </head>
+  <body>
+    <div ng-App = "MsgApp">
+      <div ng-controller = "MsgController">
+        {{sayMessage()}}
+        Blague: {{happinessCost|currency:"weed ":2}}
+      </div>
+      {{answerOfLife(42)}}
+    </div>
+  </body>
+</html>
