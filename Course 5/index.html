@@ -10,7 +10,9 @@
     <h1>Faisons un test</h1>
     <div ng-controller="MsgController">
       Texte de base: {{sayMessage()}} <br>
-      Texte modifié: {{sayHungryMessage()}}
+      Texte modifié: {{sayHungryMessage()}} <br>
+      Test de Truth: {{sayHungryMessage() | truth:"William":"Maxime"}}<br>
+      BIG TRUTH: {{sayHungryMessage() | truth:"William":"Maxime" | uppercase}}
     </div>
   </body>
 </html>

@@ -4,9 +4,10 @@
 angular.module("MsgApp", [])
 
 .controller("MsgController", MsgController)
-.filter("hungry", HungryFilter);
+.filter("hungry", HungryFilter)
+.filter("truth", TruthFilter);
 
-MsgController.$inject = ["$scope", "hungryFilter"];
+MsgController.$inject = ["$scope", "hungryFilter", "truthFilter"];
 function MsgController($scope, hungryFilter) {
   $scope.name = "William";
   $scope.stateOfBeing = "smiling";
@@ -31,6 +32,14 @@ function HungryFilter() {
   return function (input) {
     input = input || "";
     input = input.replace("happy", "hungry");
+    return input;
+  };
+}
+
+function TruthFilter() {
+  return function(input, target, replace) {
+    input = input || "";
+    input = input.replace(target, replace);
     return input;
   };
 }
