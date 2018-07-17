@@ -9,6 +9,7 @@ CounterController.$inject = ["$scope"];
 function CounterController($scope) {
   $scope.onceCounter = 0;
   $scope.counter=0;
+  $scope.name = "moi";
 
   $scope.showNumberOfWatchers = function () {
     console.log("# of Watchers: ", $scope.$$watchersCount);
@@ -22,7 +23,11 @@ function CounterController($scope) {
     $scope.counter++;
   };
 
-  $scope.$watch("onceCounter", function(newValue, oldValue) {
+  $scope.$watch(function(){
+    console.log("Digest Loop Fired!");
+  });
+
+  /*$scope.$watch("onceCounter", function(newValue, oldValue) {
     console.log("old value: ", oldValue);
     console.log("new value:", newValue);
   });
@@ -30,7 +35,7 @@ function CounterController($scope) {
   $scope.$watch("counter", function(newValue, oldValue) {
     console.log("counter old value: ", oldValue);
     console.log("counter new value:", newValue);
-  });
+  });*/
 
   }
 
